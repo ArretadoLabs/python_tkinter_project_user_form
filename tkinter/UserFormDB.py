@@ -29,11 +29,7 @@ def entrar_dados():
 
             # Create table
             conn = sqlite3.connect('data2.db')
-            table_create_query = '''CREATE TABLE Student_data
-                        (firstname TEXT, lastname TEXT, title TEXT, age INT, nationality TEXT,
-                        registration_status TEXT, num_courses INT, num_semesters INT)
-                        '''
-            conn.execute(table_create_query)
+
 
             # Insert data
             data_insert_query = '''INSERT INTO Student_data (firstname, lastname, title, age, nationality,registration_status, 
