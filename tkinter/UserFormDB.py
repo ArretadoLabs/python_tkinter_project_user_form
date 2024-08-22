@@ -2,6 +2,8 @@ import tkinter
 from tkinter import ttk
 from tkinter import messagebox
 import sqlite3
+import os
+import openpyxl
 
 
 def entrar_dados():
@@ -27,9 +29,25 @@ def entrar_dados():
             print("Status do registro", registration_status)
             print("---------------------------------------------------------------")
 
+            # Local store file Excel/CSV
+            filepath = r"C:\Users\fgsjd\OneDrive\Área de Trabalho\data.xlsx"
+
+            # Verificar se o arquivo existe
+            if os.path.exists(filepath):
+                # Criar uma nova planilha
+                workbook = openpyxl.Workbook()
+                sheet = workbook.active
+                heading = ["Primeiro nome", "Último nome", "Título", "Idade", "Nacionalidade", "# Cursos",
+                           "# Semestres", "Status do registro"]
+                sheet.append(heading)
+                # Salvar o arquivo
+                workbook.save(filepath)
+            workbook = openpyxl.load_workbook(filepath)
+            sheet = workbook.active
+            sheet.append([firstname, lastname, title, age, nationality, numcourses, numsemesters, registration_status])
+            workbook.save(filepath)
             # Create table
             conn = sqlite3.connect('data2.db')
-
 
             # Insert data
             data_insert_query = '''INSERT INTO Student_data (firstname, lastname, title, age, nationality,registration_status, 
