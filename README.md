@@ -1,6 +1,6 @@
 ![image-12-removebg-preview](https://github.com/user-attachments/assets/862ec222-6af5-4bd2-97d2-af1a77efdbaf)
 
-# Projeto form Python com Tkinter e DB Browser
+# Projeto - form Python com Tkinter e DB Browser
 
 Este repositório refere-se a um projeto de nível iniciante, aonde são abordadas aprendizados referentes ao uso da interface grafácia Tkinter, que é uma ferramenta que auxiliar na construção de aplicativos desktop utilizando a linguagem Python. 
 
